@@ -1,0 +1,180 @@
+.countryListItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--surface-color, #ffffff);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.countryListItem:hover {
+  background: var(--hover-color, #f9fafb);
+  border-color: var(--primary-color, #3b82f6);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.countryListItem:focus-visible {
+  outline: 2px solid var(--primary-color, #3b82f6);
+  outline-offset: 2px;
+}
+
+.countryListItemInner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.flagContainer {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--skeleton-bg, #f3f4f6);
+}
+
+.flagIcon {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.infoWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.country {
+  font-weight: 500;
+  color: var(--text-primary, #111827);
+}
+
+.price {
+  font-size: 14px;
+  color: var(--text-secondary, #6b7280);
+}
+
+.chevronIcon {
+  color: var(--icon-color, #9ca3af);
+  transition: transform 0.2s ease;
+}
+
+.countryListItem:hover .chevronIcon {
+  transform: translateX(4px);
+  color: var(--primary-color, #3b82f6);
+}
+
+/* Скелетон */
+.skeleton {
+  pointer-events: none;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.flagSkeleton {
+  width: 32px;
+  height: 32px;
+  background: var(--skeleton-bg, #f3f4f6);
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.countrySkeleton {
+  width: 120px;
+  height: 20px;
+  background: var(--skeleton-bg, #f3f4f6);
+  border-radius: 4px;
+}
+
+.priceSkeleton {
+  width: 80px;
+  height: 16px;
+  background: var(--skeleton-bg, #f3f4f6);
+  border-radius: 4px;
+}
+
+.chevronSkeleton {
+  width: 20px;
+  height: 20px;
+  background: var(--skeleton-bg, #f3f4f6);
+  border-radius: 4px;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Остальные стили */
+.wrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.title {
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.countryList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.buttonGroup {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.error {
+  padding: 24px;
+  text-align: center;
+  background: var(--error-bg, #fef2f2);
+  border-radius: 8px;
+  color: var(--error-text, #991b1b);
+}
+
+.errorMessage {
+  margin-bottom: 16px;
+}
+
+.retryButton {
+  padding: 8px 16px;
+  background: var(--error-text, #991b1b);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.retryButton:hover {
+  background: var(--error-hover, #7f1d1d);
+}
+
+.retryButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.noResults {
+  padding: 24px;
+  text-align: center;
+  color: var(--text-secondary, #6b7280);
+}

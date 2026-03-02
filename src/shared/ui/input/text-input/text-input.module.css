@@ -1,0 +1,75 @@
+.container {
+  width: 100%;
+}
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.01);
+  border-radius: var(--radius-2xl);
+  font-size: 17px;
+  padding-left: calc(var(--space-4) + var(--space-5) + 0.5rem);
+  line-height: 1.3;
+  color: rgba(0, 0, 0, 0.46);
+  background-color: rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease-in-out;
+
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.46);
+  }
+
+  &:focus {
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.08);
+    color: black;
+  }
+}
+
+.inputError {
+  border-color: #ef4444;
+}
+
+.inputError:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.inputDisabled {
+  background-color: #f7fafc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.inputDisabled:hover {
+  border-color: #e2e8f0;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #718096;
+  transition: color 0.2s ease-in-out;
+}
+
+.iconLeft {
+  left: var(--space-4);
+}
+
+.iconRight {
+  right: 16px;
+}
+
+.errorMessage {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #ef4444;
+}

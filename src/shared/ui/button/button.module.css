@@ -1,0 +1,23 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  width: 100%;
+  padding: var(--space-0) var(--space-6);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-2xl);
+  color: var(--button-text-primary);
+  transition: background-color 0.24s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.primary-button {
+  background-color: var(--gray);
+
+  &:hover {
+    background-color: var(--dark-gray);
+  }
+}

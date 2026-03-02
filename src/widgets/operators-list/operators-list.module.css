@@ -1,0 +1,83 @@
+.wrapper {
+  background-color: var(--background-white);
+  border-radius: var(--radius-2xl);
+}
+
+.title {
+  font-size: var(--font-size-xl);
+  padding: var(--space-4) var(--space-4) var(--space-3) var(--space-4);
+  line-height: calc(var(--line-height-22) / var(--font-size-xl));
+  letter-spacing: -0.013rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+}
+
+.countryInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+.country {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: -0.0075rem;
+}
+
+.operator {
+  font-size: var(--font-size-sm);
+  line-height: calc(var(--line-height-18) / var(--font-size-sm));
+  font-weight: var(--font-weight-medium);
+}
+
+.skeletonFlag {
+  width: 40px;
+  height: 40px;
+  background: #eee;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+.skeletonList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.skeleton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.skeletonCountryInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.skeletonText {
+  width: 100px;
+  height: 14px;
+  background: #eee;
+  border-radius: 6px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}

@@ -1,0 +1,75 @@
+.wrapper {
+  background-color: var(--background-white);
+  border-radius: var(--radius-3xl);
+}
+
+.title {
+  font-size: var(--font-size-xl);
+  padding: var(--space-4) var(--space-4) var(--space-3) var(--space-4);
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  padding: 8px 16px 16px 16px;
+}
+
+.infoWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.countryListItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  background-color: transparent;
+  text-decoration: none;
+  color: inherit;
+  border-radius: var(--radius-2xl);
+}
+
+.countryListItemInner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.price {
+  font-size: 10px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.74);
+}
+
+.country {
+  font-size: 17px;
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  .countryListItem {
+    background-color: var(--background-gray);
+    max-width: 330px;
+  }
+
+  .wrapper {
+    padding: var(--space-6);
+  }
+
+  .title {
+    font-size: var(--font-size-2xl);
+    padding: var(--space-0) var(--space-0) var(--space-6) var(--space-0);
+  }
+
+  .buttonGroup {
+    padding: var(--space-7) var(--space-0) var(--space-0) var(--space-0);
+  }
+
+  .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: grid;
+    grid-column-gap: 12px;
+    grid-row-gap: 12px;
+  }
+}

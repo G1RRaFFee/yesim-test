@@ -1,0 +1,22 @@
+{
+  "link": "Link",
+  "title": "Title",
+  "dropDown": "Drop-down",
+  "signIn": "Sign in",
+  "search": "Find directions",
+  "signOut": "Sign out",
+  "signInToContinue": "Sign in to continue",
+  "viaEmail": "You have successfully logged in via email {{email}}",
+  "showAllCountries": "Show all countries",
+  "popularCountries": "Popular countries",
+  "faq": "How it works",
+  "longTitle": "Very long headline",
+  "travelSim": "Travel SIM cards with Internet connection",
+  "countriesOperators": "Countries and operators",
+  "continue": "Continue",
+  "simTitle": "eSIM cards with Internet for travel and business",
+  "main": {
+    "title": "eSIM Service - Prepaid Virtual SIM Cards for Travelers - Yesim",
+    "description": "eSIM service ⏩ Prepaid digital SIM cards for tourism and business ⏩ Standard and unlimited, local and global cell phone data plans ⏩ No contracts ✅ No hidden Roaming charges and fees ✅ - Yesim"
+  }
+}
