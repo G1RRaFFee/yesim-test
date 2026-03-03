@@ -3,12 +3,12 @@
 import { type ChangeEvent } from 'react';
 
 import { useCountrySearch } from '@/entities/utils';
-import { useCountriesInfo } from '@/entities/utils/country/useCountriesInfo.hook';
+import { useCountriesInfo } from '@/entities/utils/country/use-countries-info.hook';
 import { TextInput } from '@/shared/ui';
 import { SearchIcon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
-import { CountriesInfoList } from '../../widgets/section/country-list/country-list';
+import { CountriesInfoList } from '../../../widgets/section/popular-country-list/popular-country-list.widget';
 import styles from './country-search.module.css';
 
 export const CountrySearch = () => {

@@ -2,8 +2,9 @@
 import { useRouter } from 'next/navigation';
 
 import { useAuth } from '@/app/providers/auth-provider';
-import { Login } from '@/features/login/ui/login';
+import { Login } from '@/features/auth/login/ui/login';
 import { Modal } from '@/shared/ui';
+import { ROUTES } from '@/shared/constants';
 
 const LoginModal = () => {
   const router = useRouter();
@@ -15,7 +16,7 @@ const LoginModal = () => {
 
   const handleLoginSubmit = (email: string) => {
     login({ id: crypto.randomUUID(), email });
-    router.push('/login-success');
+    router.push(ROUTES.SUCCESS_LOGIN);
   };
 
   return (

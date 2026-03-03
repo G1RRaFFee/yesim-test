@@ -4,12 +4,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { useAuth } from '@/app/providers/auth-provider';
-import { LanguageSwitcher } from '@/features/change-language/ui/language-switcher';
+import { LanguageSwitcher } from '@/features/i18n/change-language/ui/language-switcher';
 import logo from '@public/yesim.svg';
 import { Button } from '@shared/ui';
 import { useTranslation } from 'react-i18next';
 
 import styles from './header.module.css';
+import { ROUTES } from '@/shared/constants';
 
 export const Header = () => {
   const { t } = useTranslation();
@@ -17,7 +18,7 @@ export const Header = () => {
 
   const ActionButton = !isAuth ? (
     <Button>
-      <Link href={'/login'} scroll={false}>
+      <Link href={ROUTES.LOGIN} scroll={false}>
         {t('signIn')}
       </Link>
     </Button>
@@ -27,10 +28,10 @@ export const Header = () => {
 
   return (
     <header className={styles.header}>
-      <Link href="/">
+      <Link href={ROUTES.HONE}>
         <Image src={logo} height={30} width={100} alt="yesim-logo" />
       </Link>
-      <div className={styles['actions-wrapper']}>
+      <div className={styles.actionsWrapper}>
         <LanguageSwitcher />
         {ActionButton}
       </div>

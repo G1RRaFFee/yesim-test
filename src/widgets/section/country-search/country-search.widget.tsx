@@ -1,16 +1,16 @@
 'use client';
 
 import { Typography } from '@/shared/ui';
-import { CountrySearch } from '@/features/country-search/country-search';
+import { CountrySearch } from '@/features/country/country-search/country-search';
 import { useTranslation } from 'react-i18next';
 
 import styles from './sim-section.module.css';
 
-interface SimSectionProps {
+interface CountrySearchWidgetProps {
   className?: string;
 }
 
-export const SimSection = ({ className }: SimSectionProps) => {
+export const CountrySearchWidget = ({ className }: CountrySearchWidgetProps) => {
   const { t } = useTranslation();
 
   return (

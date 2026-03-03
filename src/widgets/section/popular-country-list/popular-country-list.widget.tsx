@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 
-import { useCountriesInfo } from '@/entities/utils/country/useCountriesInfo.hook';
+import { useCountriesInfo } from '@/entities/utils/country/use-countries-info.hook';
 import { FlagAvatar } from '@/shared/ui/flag-avatar/flag-avatar';
 import type { CountryInfo } from '@entities/model';
 import { useListVisibility } from '@entities/utils';
@@ -10,7 +10,7 @@ import { ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 import styles from './country-list.module.css';
-import { CountryListSkeleton } from './skeleton/country-list-skeleton';
+import { CountryListSkeleton } from './skeleton/popular-country-list.skeleton';
 import classNames from 'classnames';
 
 interface CountriesInfoListProps {
@@ -77,24 +77,22 @@ export const CountriesInfoList = ({
   );
 };
 
-interface MostPopularCountriesListProps {
-  className?: string;
+interface PopularCountriesListWidgetProps {
+  widgetClassName?: string;
 }
 
-export const MostPopularCountriesList = ({ className }: MostPopularCountriesListProps) => {
+export const PopularCountriesListWidget = ({ widgetClassName }: PopularCountriesListWidgetProps) => {
   const { t } = useTranslation();
   const { data: countries, isLoading } = useCountriesInfo();
 
   return (
-    <div className={`${styles.wrapper} ${className || ''}`}>
+    <section className={classNames(styles.wrapper, widgetClassName)}>
       <Typography variant="h2" as="h2" className={styles.title}>
         {t('popularCountries')}
       </Typography>
-      {isLoading ? (
-        <CountryListSkeleton count={12} />
-      ) : (
+      {isLoading ? <CountryListSkeleton count={12} />: (
         <CountriesInfoList initialLimit={12} countries={countries || []} />
       )}
-    </div>
+    </section>
   );
 };

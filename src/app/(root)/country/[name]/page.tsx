@@ -1,4 +1,4 @@
-import { OperatorsList } from '@/widgets/operators-list/operators-list';
+import { OperatorsListWidget } from '@widgets/index';
 
 import styles from './page.module.css';
 
@@ -12,9 +12,7 @@ const CountryPage = async ({ params }: CountryPageProps) => {
   const { name } = await params;
   return (
     <main>
-      <section className={styles.section}>
-        <OperatorsList countryName={name} />
-      </section>
+      <OperatorsListWidget widgetClassName={styles.section} countryName={name} />
     </main>
   );
 };

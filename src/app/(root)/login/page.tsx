@@ -1,6 +1,6 @@
 'use client';
 
-import { Login } from '@/features/login/ui/login';
+import { Login } from '@/features/auth/login/ui/login';
 
 const LoginPage = () => {
   return <Login onSubmit={() => console.log('hello')} />;

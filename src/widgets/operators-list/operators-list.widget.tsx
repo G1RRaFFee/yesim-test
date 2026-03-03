@@ -1,37 +1,26 @@
 'use client';
 
 import type { Operator } from '@/entities/model';
-import { useCountry } from '@/entities/utils/country/useCountry.hook';
+import { useCountry } from '@/entities/utils/country/use-country.hook';
 import { List, Typography } from '@/shared/ui';
 import { FlagAvatar } from '@/shared/ui/flag-avatar/flag-avatar';
 import { useTranslation } from 'react-i18next';
 
 import styles from './operators-list.module.css';
+import { OperatorsSkeleton } from './skeleton/operators-list.skeleton';
+import classNames from 'classnames';
 
 interface OperatorsListProps {
   countryName: string;
+  widgetClassName?: string
 }
 
-const OperatorsSkeleton = () => {
-  return (
-    <div className={styles.skeleton}>
-      <div className={styles.skeletonCountryInfo}>
-        <div className={styles.skeletonFlag} />
-        <div className={styles.skeletonText} />
-      </div>
-      <div className={styles.skeletonList}>
-        <div className={styles.skeletonText} />
-        <div className={styles.skeletonText} />
-      </div>
-    </div>
-  );
-};
-
-export const OperatorsList = ({ countryName }: OperatorsListProps) => {
+export const OperatorsListWidget = ({ widgetClassName, countryName }: OperatorsListProps) => {
   const { data: country, isLoading } = useCountry(countryName);
   const { t } = useTranslation();
+
   return (
-    <div className={styles.wrapper}>
+    <section className={classNames(styles.wrapper, widgetClassName)}>
       <Typography className={styles.title} as="h2" variant="h2">
         {t('countriesOperators')}
       </Typography>
@@ -58,6 +47,6 @@ export const OperatorsList = ({ countryName }: OperatorsListProps) => {
           <div>Not found</div>
         )}
       </div>
-    </div>
+    </section>
   );
 };

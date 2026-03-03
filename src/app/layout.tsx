@@ -8,7 +8,7 @@ import { AuthProvider, IntlProvider, QueryProvider } from '@app/providers';
 import '@app/styles/globals.css';
 import { Header } from '@widgets/index';
 
-import { AvailableLanguage } from './types/language.type';
+import { AvailableLanguage } from './types/i18n/language.type';
 
 const inter = Inter({
   variable: '--font-inter',

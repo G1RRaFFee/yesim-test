@@ -1,4 +1,4 @@
-import { type AvailableLanguage } from '@/app/types/language.type';
+import { type AvailableLanguage } from '@/app/types/i18n/language.type';
 import en from '@public/locales/en.json' with { type: 'json' };
 import ru from '@public/locales/ru.json' with { type: 'json' };
 import { createInstance } from 'i18next';

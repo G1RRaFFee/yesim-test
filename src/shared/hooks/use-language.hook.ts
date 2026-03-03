@@ -5,7 +5,7 @@ import { useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { useTranslation } from 'react-i18next';
-import { AvailableLanguage } from '@/app/types/language.type';
+import { AvailableLanguage } from '@/app/types/i18n/language.type';
 
 const LANGUAGE_COOKIE_KEY = 'lang';
 const ONE_YEAR = 60 * 60 * 24 * 365;

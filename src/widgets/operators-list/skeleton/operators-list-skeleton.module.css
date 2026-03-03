@@ -1,0 +1,45 @@
+.skeletonFlag {
+    width: 40px;
+    height: 40px;
+    background: #eee;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+  }
+  
+  .skeletonList {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .skeleton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .skeletonCountryInfo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+  
+  .skeletonText {
+    width: 100px;
+    height: 14px;
+    background: #eee;
+    border-radius: 6px;
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.6;
+    }
+  }

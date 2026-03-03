@@ -1,2 +1,2 @@
-export { useDragScroll } from './useDragScroll.hook';
-export { useLanguage } from './useLanguage.hook';
+export { useDragScroll } from './use-drag-scroll.hook';
+export { useLanguage } from './use-language.hook';

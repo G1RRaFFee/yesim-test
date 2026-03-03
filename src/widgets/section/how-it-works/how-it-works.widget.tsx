@@ -5,6 +5,7 @@ import { useDragScroll } from '@shared/hooks';
 import { useTranslation } from 'react-i18next';
 
 import styles from './how-it-works.module.css';
+import classNames from 'classnames';
 
 interface StepCardProps {
   title: string;
@@ -27,12 +28,18 @@ function StepCard({ title }: StepCardProps) {
   );
 }
 
-export const HowItWorks = () => {
+interface HowItWorksWidgetProps {
+  widgetClassName?: string;
+}
+
+export const HowItWorksWidget = ({widgetClassName}: HowItWorksWidgetProps) => {
   const dragScroll = useDragScroll<HTMLDivElement>({ speed: 1.5 });
   const { t } = useTranslation();
   const steps = Array(5).fill(t('longTitle'));
 
   return (
+    <section className={classNames(widgetClassName)}>
+
     <div className={styles.howItWorks} data-name="How it works">
       <div className={styles.contentBlockTitle} data-name="Content Block Title">
         <Typography className={styles.title} variant="h2" as="h2">
@@ -48,11 +55,12 @@ export const HowItWorks = () => {
         onPointerLeave={dragScroll.onPointerLeave}
         onWheel={dragScroll.onWheel}
         style={{ cursor: 'grab' }}
-      >
+        >
         {steps.map((step, index) => (
           <StepCard key={index} title={step} />
         ))}
       </div>
     </div>
+</section>
   );
 };

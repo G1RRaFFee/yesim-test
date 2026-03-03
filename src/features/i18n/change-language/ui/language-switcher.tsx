@@ -1,7 +1,7 @@
 'use client';
 
-import { AvailableLanguage } from '@/app/types/language.type';
-import { useLanguage } from '@/shared/hooks/useLanguage.hook';
+import { AvailableLanguage } from '@/app/types/i18n/language.type';
+import { useLanguage } from '@/shared/hooks/use-language.hook';
 import { Select } from '@shared/ui';
 
 const languages = [
