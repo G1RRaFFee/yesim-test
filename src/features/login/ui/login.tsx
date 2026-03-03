@@ -1,8 +1,10 @@
 'use client';
 
-import { type SubmitEvent, useState } from 'react';
+import { ChangeEvent, type SubmitEvent, useState} from 'react';
 
 import styles from './login.module.css';
+import { useTranslation } from 'react-i18next';
+import { Button, TextInput, Typography } from '@/shared/ui';
 
 interface LoginProps {
   onSubmit: (email: string) => void;
@@ -10,6 +12,7 @@ interface LoginProps {
 
 export const Login = ({ onSubmit }: LoginProps) => {
   const [email, setEmail] = useState('');
+  const {t} = useTranslation()
 
   const handleSubmit = (e: SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -17,33 +20,37 @@ export const Login = ({ onSubmit }: LoginProps) => {
     setEmail('');
   };
 
+  const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value);
+  }
+
   return (
     <form className={styles.formContainer} onSubmit={handleSubmit}>
-      <div className={styles.title}>
-        <p>Войдите, чтобы продолжить</p>
-      </div>
+        <Typography as="p" className={styles.title}>
+          {t("signInToContinue")}  
+        </Typography>
       <div className={styles.spacer} data-name="size-box" />
       <div className={styles.inputContainer} data-name="Input">
         <div className={styles.fieldCancel} data-name="Field + cancel">
-          <input
+          <TextInput
             type="email"
             className={styles.inputField}
-            placeholder="Введи email"
+            placeholder={t("enterEmail")}
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={handleEmailChange}
             data-name="Status=Default, Type=Text"
             required
           />
         </div>
       </div>
       <div className={styles.spacerSmall} data-name="size-box" />
-      <button type="submit" className={styles.submitButton} data-name="Button">
+      <Button type="submit" className={styles.submitButton} data-name="Button">
         <div className={styles.submitButtonInner}>
-          <div className={styles.submitButtonText}>
-            <p>Продолжить</p>
-          </div>
+          <Typography as="p" className={styles.submitButtonText}>
+            {t("continue")}
+          </Typography>
         </div>
-      </button>
+      </Button>
     </form>
   );
 };

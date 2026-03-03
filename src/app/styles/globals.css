@@ -56,6 +56,7 @@
 
   --line-height-18: 18px;
   --line-height-22: 22px;
+  --line-height-40: 40px;
 }
 
 html,
@@ -67,7 +68,14 @@ body {
   }
 }
 
+html {
+  height: 100vh;
+}
+
 body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   font-family: var(--font-inter);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

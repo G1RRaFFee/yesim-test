@@ -5,6 +5,7 @@
   "dropDown": "Выпадающий список",
   "signIn": "Войти",
   "signOut": "Выйти",
+  "enterEmail": "Введи email",
   "signInToContinue": "Войдите, чтобы продолжить",
   "viaEmail": "Вы успешно вошли через почту {{email}}",
   "showAllCountries": "Показать все страны",

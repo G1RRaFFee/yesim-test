@@ -4,7 +4,7 @@ import styles from './page.module.css';
 
 export default function Home() {
   return (
-    <>
+    <main>
       <SimSection className={styles.section} />
       <section className={styles.section}>
         <MostPopularCountriesList />
@@ -12,6 +12,6 @@ export default function Home() {
       <section className={styles.section}>
         <HowItWorks />
       </section>
-    </>
+    </main>
   );
 }

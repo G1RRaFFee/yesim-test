@@ -1,0 +1,6 @@
+.list {
+    grid-template-columns: none;
+    grid-column-gap: none;
+    grid-row-gap: none;
+    background-color: red;
+  }

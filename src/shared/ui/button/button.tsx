@@ -1,4 +1,4 @@
-import { type HTMLAttributes, JSX } from 'react';
+import type { ButtonHTMLAttributes, JSX } from 'react';
 
 import classNames from 'classnames';
 
@@ -6,7 +6,7 @@ import styles from './button.module.css';
 
 type ButtonVariants = 'primary';
 
-interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariants;
 }
 

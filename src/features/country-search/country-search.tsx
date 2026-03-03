@@ -8,7 +8,7 @@ import { TextInput } from '@/shared/ui';
 import { SearchIcon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
-import { CountriesInfoList } from '../country-list/country-list';
+import { CountriesInfoList } from '../../widgets/section/country-list/country-list';
 import styles from './country-search.module.css';
 
 export const CountrySearch = () => {
@@ -32,7 +32,7 @@ export const CountrySearch = () => {
         />
       </div>
       {stats.hasResults && (
-        <CountriesInfoList showAllButton={false} countries={filteredCountries} />
+        <CountriesInfoList className={styles.list} showAllButton={false} countries={filteredCountries} />
       )}
       {!stats.hasResults && stats.isFiltering && <div>Ничего не найдено</div>}
     </div>

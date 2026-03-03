@@ -1,7 +1,7 @@
 'use client';
 
 import { Typography } from '@/shared/ui';
-import { CountrySearch } from '@/widgets/country-search/country-search';
+import { CountrySearch } from '@/features/country-search/country-search';
 import { useTranslation } from 'react-i18next';
 
 import styles from './sim-section.module.css';

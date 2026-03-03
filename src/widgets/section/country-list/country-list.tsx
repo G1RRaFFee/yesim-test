@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 
 import styles from './country-list.module.css';
 import { CountryListSkeleton } from './skeleton/country-list-skeleton';
+import classNames from 'classnames';
 
 interface CountriesInfoListProps {
   countries: Array<CountryInfo>;
@@ -24,12 +25,15 @@ export const CountriesInfoList = ({
   countries,
   initialLimit = 'all',
   showAllButton = true,
+  className = ""
 }: CountriesInfoListProps) => {
   const { displayedItems, showAll, hasMoreItems, handleShowAll } = useListVisibility({
     items: countries,
     initialLimit,
   });
+
   const { t } = useTranslation();
+  
   const renderCountryInfoItem = (country: CountryInfo) => (
     <Link
       href={country.url}
@@ -52,7 +56,7 @@ export const CountriesInfoList = ({
   );
 
   const footerContent = showAllButton && hasMoreItems && (
-    <div className={styles.buttonGroup}>
+    <div className={classNames(styles.buttonGroup, className)}>
       {!showAll && (
         <Button onClick={handleShowAll} aria-label={t('showAllCountries')}>
           {t('showAllCountries')}

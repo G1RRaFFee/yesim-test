@@ -17,11 +17,11 @@ const inter = Inter({
 
 export async function generateMetadata() {
   const cookieStore = await cookies();
+  const lang = cookieStore.get('lang')?.value;
 
-  const cookieLang = cookieStore.get('lang')?.value;
+  if (!lang) return;
 
-  const lang: AvailableLanguage = cookieLang === 'ru' || cookieLang === 'en' ? cookieLang : 'en';
-  const i18n = await initI18n(lang);
+  const i18n = await initI18n(lang as AvailableLanguage);
 
   return {
     title: i18n.t('main.title'),

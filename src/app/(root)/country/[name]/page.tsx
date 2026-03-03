@@ -11,9 +11,11 @@ interface CountryPageProps {
 const CountryPage = async ({ params }: CountryPageProps) => {
   const { name } = await params;
   return (
-    <section className={styles.section}>
-      <OperatorsList countryName={name} />
-    </section>
+    <main>
+      <section className={styles.section}>
+        <OperatorsList countryName={name} />
+      </section>
+    </main>
   );
 };
 
